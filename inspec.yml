@@ -1,0 +1,54 @@
+
+name: cms-ars3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay
+title: cms-ars3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay
+maintainer: CMS InSpec Dev Team
+copyright: (c) 2019 The MITRE Corporation
+copyright_email: inspec@mitre.org
+license: Apache-2.0
+summary: "CMS ARS3.1 Overlay against the Canonical Ubuntu 16.04 DISA STIG InSpec Profile"
+version: 0.1.0
+
+depends:
+- name: canonical-ubuntu-16.04-lts-stig-baseline
+  path: ../canonical-ubuntu-16.04-lts-stig-baseline
+
+inputs:
+  - name: emergency_accounts
+    description: Emergency user accounts
+    type: Array
+    value: []
+
+  - name: temporary_accounts
+    description: Temporary user accounts
+    type: Array
+    value: []
+
+  - name: application_groups
+    description: Known Application Groups
+    type: Array
+    value: []
+
+  - name: known_system_accounts
+    description: System accounts that support approved system activities
+    type: Array
+    value: []
+
+  - name: disallowed_accounts
+    description: Accounts that are not allowed on the system
+    type: Array
+    value: []
+
+  - name: user_accounts
+    description: Accounts of known managed users
+    type: Array
+    value: []
+
+  - name: exempt_home_users
+    description: These are `home dir` exempt interactive accounts
+    type: Array
+    value: []
+
+  - name: security_accounts
+    description: Security Personnel accounts
+    type: Array
+    value: []
