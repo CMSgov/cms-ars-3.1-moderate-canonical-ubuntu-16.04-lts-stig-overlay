@@ -1,6 +1,3 @@
-### This is a ***Work in Progress***. We will release the final version in the ***MASTER*** Branch
-### This profile will continue to change until we do a final release
-
 # cms-ars-3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay
 (WIP) InSpec profile overlay to validate the secure configuration of Canonical Ubuntu 16.04 LTS against [DISA's](https://public.cyber.mil/stigs/) Canonical Ubuntu 16.04 LTS STIG Version 1 Release 1 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categories as Moderate.
 
