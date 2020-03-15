@@ -60,7 +60,7 @@ When the __"runner"__ host uses this profile overlay for the first time, follow 
 mkdir profiles
 cd profiles
 git clone https://github.com/mitre/canonical-ubuntu-16.04-lts-stig-baseline.git
-git clone https://github.cms.gov/ISPG/cms-ars-3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay.git
+git clone https://github.com/CMSgov/cms-ars-3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay.git
 cd cms-ars-3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay
 bundle install
 cd ..
@@ -85,7 +85,7 @@ The JSON results output file can be loaded into __[heimdall-lite](https://mitre.
 The JSON InSpec results file may also be loaded into a __[full heimdall server](https://github.com/mitre/heimdall)__, allowing for additional functionality such as to store and compare multiple profile runs.
 
 ## Contributing and Getting Help
-To report a bug or feature request, please open an [issue](https://github.cms.gov/ISPG/cms-ars-3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay/issues/new).
+To report a bug or feature request, please open an [issue](https://github.com/CMSgov/cms-ars-3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay/issues/new).
 
 ## Authors
 * author_1
