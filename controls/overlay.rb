@@ -1,4 +1,5 @@
 include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
+  
   control 'V-75393' do
     title "The Ubuntu operating system must display the Standard Mandatory CMS
     Notice and Consent Banner before granting local or remote access to the system
@@ -41,6 +42,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     [org/gnome/login-screen]
     banner-message-enable=true"
   end
+
   control 'V-75435' do
     title "The Ubuntu operating system must display the Standard Mandatory CMS
     Notice and Consent Banner before granting local or remote access to the system
@@ -104,6 +106,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     - The Government may monitor, record, and audit your system usage, including usage of personal devices and email systems for official duties or to conduct HHS business. Therefore, you have no reasonable expectation of privacy regarding any communication or data transiting or stored on this system. At any time, and for any lawful Government purpose, the government may monitor, intercept, and search and seize any communication or data transiting or stored on this system.
     - Any communication or data transiting or stored on this system may be disclosed or used for any lawful Government purpose"
   end
+
   control 'V-75443' do
     title "The Ubuntu operating system must limit the number of concurrent
     sessions to ten for all accounts and/or account types."
@@ -126,11 +129,12 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
     * hard maxlogins 10"
   end
+
   control 'V-75445' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75457' do
     title "The Ubuntu operating system must require the change of at least 6
     characters when passwords are changed."
@@ -166,6 +170,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
     difok=6"
   end
+
   control 'V-75459' do
     desc "Passwords need to be protected at all times, and encryption is the
     standard method for protecting passwords. If passwords are not encrypted, they
@@ -178,6 +183,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
         FIPS 140-2 is the current standard for validating that mechanisms used to
     access cryptographic modules utilize authentication that meets CMS requirements."
   end
+
   control 'V-75465' do
     desc "Unapproved mechanisms that are used for authentication to the
     cryptographic module are not verified and therefore cannot be relied upon to
@@ -199,6 +205,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     password        [success=1 default=ignore]      pam_unix.so obscure sha512
     shadow remember=12"
   end
+
   control 'V-75469' do
     title "Emergency administrator accounts must be provisioned with an expiration time of
     24 hours or less."
@@ -221,6 +228,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
     # sudo chage -E `date -d \"+1 days\" +%Y-%m-%d` system_account_name"
   end
+
   control 'V-75475' do
     title "Passwords must be prohibited from reuse for a minimum of six
     generations."
@@ -243,6 +251,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     password [success=1 default=ignore]      pam_unix.so obscure sha512 remember=6
     rounds=5000"
   end
+
   control 'V-75485' do
     title "Account identifiers (individuals, groups, roles, and devices) must
     disabled after 60 days of inactivity."
@@ -276,6 +285,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     \"-1\" will disable this feature, and \"0\" will disable the account
     immediately after the password expires."
   end
+
   control 'V-75487' do
     desc "check", "Verify the Ubuntu operating system automatically locks an
     account until the account lock is released by an administrator or after 1 hour when five
@@ -296,9 +306,12 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
     \"auth required pam_tally2.so onerr=fail deny=5 unlock_time=7200\""
   end
+
   control 'V-75489' do
-    tag "nist": ["AC-6 (10)", "Rev_4"]
+    impact 0.0
+    desc "caveat", "Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1"
   end
+
   control 'V-75491' do
     title "Temporary user accounts must be provisioned with an expiration time of
     60 days or less."
@@ -336,6 +349,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
     # sudo chage -E `date -d \"+60 days\" +%Y-%m-%d` system_account_name"
   end
+
   control 'V-75505' do
     desc "To mitigate the risk of unauthorized access to sensitive information
     by entities that have been issued certificates by CMS-approved PKIs, all CMS
@@ -376,6 +390,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     users (or processes acting on behalf of users) and objects (e.g., devices,
     files, records, processes, programs, and domains) in the information system."
   end
+
   control 'V-75511' do
     desc "Preventing unauthorized information transfers mitigates the risk of
     information, including encrypted representations of information, produced by
@@ -394,27 +409,27 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
         There may be shared resources with configurable protections (e.g., files in
     storage) that may be assessed on specific information system components."
   end
+
   control 'V-75515' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not applied to this system categorization in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not applied to this system categorization in CMS ARS 3.1'
   end
+
   control 'V-75517' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not applied to this system categorization in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not applied to this system categorization in CMS ARS 3.1'
   end
+
   control 'V-75523' do
-    impact 0
-    tag "nist": ["SI-6 d", "CM-3 (5)", "Rev_4"]
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not applied to this system categorization in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not applied to this system categorization in CMS ARS 3.1'
   end
+
   control 'V-75525' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not applied to this system categorization in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not applied to this system categorization in CMS ARS 3.1'
   end
+
   control 'V-75527' do
     desc "Changes to any software components can have significant effects on the
     overall security of the Ubuntu operating system. This requirement ensures the
@@ -435,78 +450,77 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     does not mandate CMS certificates for this purpose; however, the certificate
     used to verify the software must be from an approved CA."
   end
+
   control 'V-75529' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
-  control 'V-75535' do
-    tag "nist": ["AC-6 (10)", "AC-3 (4)", "Rev_4"]
-  end
+
   control 'V-75553' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75555' do
-    tag "nist": ["AC-3", "Rev_4"]
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75557' do
-    tag "nist": ["AC-3", "Rev_4"]
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75605' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75607' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75609' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75611' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75613' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75615' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75623' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not applied to this system categorization in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not applied to this system categorization in CMS ARS 3.1'
   end
+
   control 'V-75631' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75633' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75659' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
-  control 'V-75689' do
-    tag "nist": ["AC-6 (9)", "AC-6 (8)", "Rev_4"]
-  end
+
   control 'V-75709' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -536,6 +550,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75711' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -565,6 +580,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75713' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -594,6 +610,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75715' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -623,6 +640,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75717' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -652,6 +670,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75719' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -681,6 +700,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75721' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -710,6 +730,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75723' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -739,6 +760,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75725' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -768,6 +790,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75727' do
     desc "Without the capability to generate audit records, it would be
     difficult to establish, correlate, and investigate the events relating to an
@@ -797,6 +820,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         4) All kernel module load, unload, and restart actions."
   end
+
   control 'V-75803' do
     desc "Uncomplicated Firewall provides a easy and effective way to
     block/limit remote access to the system, via ports, services and protocols.
@@ -817,11 +841,13 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     access applications on a variety of information system components (e.g.,
     servers, workstations, notebook computers, smartphones, and tablets)."
   end
+
   control 'V-75807' do
     desc "Failure to restrict network connectivity only to authorized systems
     permits inbound connections from malicious systems. It also permits outbound
     connections that may facilitate exfiltration of CMS data."
   end
+
   control 'V-75811' do
     desc "Preventing unauthorized information transfers mitigates the risk of
     information, including encrypted representations of information, produced by
@@ -840,11 +866,12 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
         There may be shared resources with configurable protections (e.g., files in
     storage) that may be assessed on specific information system components."
   end
+
   control 'V-75813' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not applied to this system categorization in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not applied to this system categorization in CMS ARS 3.1'
   end
+
   control 'V-75825' do
     title "The Ubuntu operating system must display the Standard Mandatory CMS
     Notice and Consent Banner before granting local or remote access to the system
@@ -929,6 +956,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
     # sudo systemctl restart sshd.service"
   end
+
   control 'V-75829' do
     title "The Ubuntu operating system must implement CMS-approved encryption to
     protect the confidentiality of SSH connections."
@@ -973,6 +1001,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
     # sudo systemctl restart sshd.service"
   end
+
   control 'V-75831' do
     desc "Without cryptographic integrity protections, information can be
     altered by unauthorized users without detection.
@@ -987,6 +1016,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     enabling distribution of the public key to verify the hash information while
     maintaining the confidentiality of the secret key used to generate the hash."
   end
+
   control 'V-75837' do
     title "The Ubuntu operating system for all network connections associated
     with SSH traffic must immediately terminate at the end of the session or after
@@ -1024,11 +1054,12 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
     # sudo systemctl restart sshd.service"
   end
+
   control 'V-75859' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75863' do
     desc "Remote access services, such as those providing remote access to
     network devices and information systems, which lack automated monitoring
@@ -1046,6 +1077,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     as Remote Desktop Protocol (RDP), on a variety of information system components
     (e.g., servers, workstations, notebook computers, smartphones, and tablets)."
   end
+
   control 'V-75867' do
     desc "Without protection of communications with wireless peripherals,
     confidentiality and integrity may be compromised because unprotected
@@ -1073,11 +1105,12 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     vice versa. If the wireless peripheral is only passing telemetry data,
     encryption of the data may not be required."
   end
+
   control 'V-75869' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
   control 'V-75903' do
     desc "Using an authentication device, such as a CAC or token that is
     separate from the information system, ensures that even if the information
@@ -1105,6 +1138,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         Requires further clarification from NIST."
   end
+
   control 'V-75905' do
     desc "The use of PIV credentials facilitates standardization and reduces the
     risk of unauthorized access.
@@ -1114,6 +1148,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     Presidential Directive (HSPD) 12, as well as making the CAC a primary component
     of layered protection for national security systems."
   end
+
   control 'V-75907' do
     desc "Using an authentication device, such as a CAC or token that is
     separate from the information system, ensures that even if the information
@@ -1141,6 +1176,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         Requires further clarification from NIST."
   end
+
   control 'V-75911' do
     desc "Using an authentication device, such as a CAC or token that is
     separate from the information system, ensures that even if the information
@@ -1165,6 +1201,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     
         Requires further clarification from NIST."
   end
+
   control 'V-78005' do
     title "The system must use a CMS-approved virus scan program."
     desc "check", "Verify the system is using a CMS-approved virus scan program.
@@ -1208,6 +1245,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     If no antivirus scan program is active on the system, this is a finding."
     desc "fix", "Install an approved CMS antivirus solution on the system."
   end
+
   control 'V-78007' do
     title "The system must update the CMS-approved virus scan program every seven
     days or more frequently."
@@ -1269,6 +1307,7 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     desc "fix", "Update the approved CMS virus scan software and virus definition
     files."
   end
+
   control 'V-80959' do
     desc "Configuring the Ubuntu operating system to implement organization-wide
     security implementation guides and security checklists ensures compliance with
@@ -1285,14 +1324,15 @@ include_controls 'canonical-ubuntu-16.04-lts-stig-baseline' do
     settings; account, file, directory permission settings; and settings for
     functions, ports, protocols, services, and remote connections."
   end
+
   control 'V-80961' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not applied to this system categorization in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not applied to this system categorization in CMS ARS 3.1'
   end
+
   control 'V-80965' do
-    impact 0
-    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related                                                      
-         security control is not included in CMS ARS 3.1'
+    impact 0.0
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security control is not included in CMS ARS 3.1'
   end
+
 end
