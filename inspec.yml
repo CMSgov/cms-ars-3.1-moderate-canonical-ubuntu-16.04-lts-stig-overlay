@@ -1,54 +1,111 @@
-
-name: cms-ars3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay
-title: cms-ars3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay
+name: cms-ars-3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay
+title: cms-ars-3.1-moderate-canonical-ubuntu-16.04-lts-stig-overlay
 maintainer: CMS InSpec Dev Team
 copyright: (c) 2019 The MITRE Corporation
 copyright_email: inspec@mitre.org
 license: Apache-2.0
-summary: "CMS ARS3.1 Overlay against the Canonical Ubuntu 16.04 DISA STIG InSpec Profile"
-version: 0.1.0
+summary: "CMS ARS 3.1 Moderate Overlay InSpec Validation Profile for Canonical Ubuntu 16.04 DISA STIG"
+version: 0.1.1
+inspec_version: ">= 4.0"
 
 depends:
 - name: canonical-ubuntu-16.04-lts-stig-baseline
-  path: ../canonical-ubuntu-16.04-lts-stig-baseline
+  url: https://github.com/mitre/canonical-ubuntu-16.04-lts-stig-baseline/archive/master.tar.gz
 
 inputs:
   - name: emergency_accounts
     description: Emergency user accounts
     type: Array
     value: []
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
 
   - name: temporary_accounts
     description: Temporary user accounts
     type: Array
     value: []
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
 
   - name: application_groups
     description: Known Application Groups
     type: Array
     value: []
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
 
   - name: known_system_accounts
     description: System accounts that support approved system activities
     type: Array
     value: []
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
 
   - name: disallowed_accounts
     description: Accounts that are not allowed on the system
     type: Array
     value: []
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
 
   - name: user_accounts
     description: Accounts of known managed users
     type: Array
     value: []
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
 
   - name: exempt_home_users
     description: These are `home dir` exempt interactive accounts
     type: Array
     value: []
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
 
   - name: security_accounts
     description: Security Personnel accounts
     type: Array
     value: []
+    sensitive: true
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
+
+  - name: min_num_characters_to_change
+    description: Minimum number of characters that need to be changed for password rotation
+    type: Numeric
+    value: 6
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
+
+  - name: min_num_password_generations
+    description: Minimum number of passwords to remember
+    type: Numeric
+    value: 6
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
+
+  - name: max_account_inactive_days
+    description: Maximum number of days an account can remain inactive
+    type: Numeric
+    value: 60
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
+
+  - name: client_alive_interval
+    description: Client Alive Interval
+    type: Numeric
+    value: 1800
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
+
+  - name: client_alive_count_max
+    description: Client Alive Interval
+    type: Numeric
+    value: 0
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
+
+  - name: org_name
+    description: Organization Name
+    type: String
+    value: 'CMS'
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
+
+  - name: banner_text
+    description: Standard Mandatory CMS Notice and Consent Banner
+    type: String
+    value: '* This warning banner provides privacy and security notices consistent with applicable federal laws, directives, and other federal guidance for accessing this Government system, which includes (1) this computer network, (2) all computers connected to this network, and (3) all devices and storage media attached to this network or to a computer on this network.
+    * This system is provided for Government authorized use only.
+    * Unauthorized or improper use of this system is prohibited and may result in disciplinary action and/or civil and criminal penalties.
+    * Personal use of social media and networking sites on this system is limited as to not interfere with official work duties and is subject to monitoring.
+    * By using this system, you understand and consent to the following:
+    - The Government may monitor, record, and audit your system usage, including usage of personal devices and email systems for official duties or to conduct HHS business. Therefore, you have no reasonable expectation of privacy regarding any communication or data transiting or stored on this system. At any time, and for any lawful Government purpose, the government may monitor, intercept, and search and seize any communication or data transiting or stored on this system.
+    - Any communication or data transiting or stored on this system may be disclosed or used for any lawful Government purpose'
+    profile: canonical-ubuntu-16.04-lts-stig-baseline
